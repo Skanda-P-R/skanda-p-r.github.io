@@ -884,8 +884,8 @@ a {
 
 .copy-toast {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 24px;
+  left: 24px;
   background: #10b981;
   color: #ffffff;
   padding: 12px 22px;
@@ -905,6 +905,68 @@ a {
 .copy-toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Floating Action Dock (Bottom Right) */
+.floating-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 95;
+}
+
+.floating-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.floating-btn:hover {
+  color: #ffffff;
+  background: rgba(30, 41, 59, 0.95);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+#back-to-top:hover {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.35);
+}
+
+.floating-dock .floating-btn[href*="mailto"]:hover {
+  border-color: var(--accent-emerald);
+  color: #34d399;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.floating-dock .floating-btn[href*="github"]:hover {
+  border-color: #f8fafc;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+}
+
+.floating-dock .floating-btn[href*="linkedin"]:hover {
+  border-color: #0a66c2;
+  color: #38bdf8;
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
 }
 
 /* Footer */
@@ -1098,6 +1160,19 @@ a {
     left: 16px;
     bottom: 20px;
     justify-content: center;
+  }
+  .floating-dock {
+    bottom: 18px;
+    right: 14px;
+    gap: 8px;
+  }
+  .floating-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .floating-btn svg {
+    width: 15px;
+    height: 15px;
   }
 }
 
