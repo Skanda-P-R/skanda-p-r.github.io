@@ -297,7 +297,46 @@
           </div>
         </div>
 
-        <!-- Project 2: Multi-Agent Reasoning DPR -->
+        <!-- Project 2: High-Performance URL Shortener -->
+        <div class="project-card featured-wide">
+          <div>
+            <div class="project-header">
+              <span class="project-badge">Distributed Systems &amp; Backend</span>
+              <span class="exp-badge">Production Service</span>
+            </div>
+            <h3 class="project-title">High-Performance URL Shortener</h3>
+            <div class="project-summary">FastAPI &middot; PostgreSQL &middot; Redis &middot; Base62 &middot; Docker &middot; Python 3.13</div>
+            <p class="project-desc">
+              Production-grade, distributed URL shortening service engineered for high throughput and sub-millisecond redirects.
+            </p>
+            <ul class="project-list">
+              <li><strong>Non-Sequential IDs &amp; Base62:</strong> Generates cryptographically secure 63-bit IDs mapped to Base62 slugs, preventing scraping and sequential enumeration attacks.</li>
+              <li><strong>Cache-Aside Architecture:</strong> Multi-tier read pipeline serving redirects directly from Redis in sub-milliseconds with automated PostgreSQL fallback and cache pre-warming.</li>
+              <li><strong>URL Deduplication:</strong> Enforces idempotency via unique B-Tree constraints, eliminating redundant storage across duplicate submissions.</li>
+              <li><strong>Full-Stack Deployment:</strong> Async ASGI backend deployed on Render, paired with a responsive GitHub Pages client featuring instant clipboard copy and tab launch controls.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">Base62</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Python 3.13</span>
+              <span class="tech-tag">REST API</span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://skanda-p-r.github.io/URL-Shortner/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Live App ↗
+            </a>
+            <a href="https://github.com/Skanda-P-R/URL-Shortner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              View Repository ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Multi-Agent Reasoning DPR -->
         <div class="project-card">
           <div>
             <div class="project-header">
@@ -329,7 +368,7 @@
           </div>
         </div>
 
-        <!-- Project 3: NeuroTutor -->
+        <!-- Project 4: NeuroTutor -->
         <div class="project-card">
           <div>
             <div class="project-header">
@@ -360,7 +399,7 @@
           </div>
         </div>
 
-        <!-- Project 4: Legal Research Platform -->
+        <!-- Project 5: Legal Research Platform -->
         <div class="project-card">
           <div>
             <div class="project-header">
@@ -392,7 +431,7 @@
           </div>
         </div>
 
-        <!-- Project 5: Remote Touchpad & Keyboard -->
+        <!-- Project 6: Remote Touchpad & Keyboard -->
         <div class="project-card">
           <div>
             <div class="project-header">
@@ -470,7 +509,10 @@
           </h3>
           <div class="skill-chips">
             <span class="skill-chip">Flask</span>
+            <span class="skill-chip">FastAPI</span>
             <span class="skill-chip">REST API Design</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">Redis</span>
             <span class="skill-chip">MySQL</span>
             <span class="skill-chip">MongoDB</span>
             <span class="skill-chip">HPCC Systems / Roxie</span>
@@ -510,6 +552,7 @@
           <div class="skill-chips">
             <span class="skill-chip">OCI</span>
             <span class="skill-chip">AWS</span>
+            <span class="skill-chip">Docker</span>
             <span class="skill-chip">Git &amp; GitHub</span>
             <span class="skill-chip">Postman</span>
             <span class="skill-chip">Selenium</span>
@@ -571,7 +614,7 @@
           </div>
         </div>
 
-        <div class="pub-card" style="grid-column: span 2;">
+        <div class="pub-card pub-card-wide">
           <div class="pub-icon-wrap">📊</div>
           <div>
             <h3 class="pub-title">NPTEL Elite Certifications</h3>
@@ -595,18 +638,16 @@
         <h2 class="section-title">GitHub Activity</h2>
       </div>
 
-      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div class="github-stats-container">
         <img 
           src="https://github-readme-stats.vercel.app/api?username=Skanda-P-R&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" 
           alt="Skanda P R GitHub Stats" 
-          loading="lazy" 
-          style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle);"
+          loading="lazy"
         >
         <img 
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=Skanda-P-R&layout=compact&theme=tokyonight&hide_border=true" 
           alt="Top Languages" 
-          loading="lazy" 
-          style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle);"
+          loading="lazy"
         >
       </div>
     </div>

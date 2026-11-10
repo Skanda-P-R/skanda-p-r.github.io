@@ -46,6 +46,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -54,6 +56,7 @@ body {
   color: var(--text-primary);
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   min-height: 100vh;
 }
@@ -64,8 +67,10 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: 
     radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
     radial-gradient(circle at 85% 25%, rgba(6, 182, 212, 0.1) 0%, transparent 45%),
@@ -79,14 +84,31 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: -1;
+}
+
+/* Ensure media and long text fit containers defensively */
+img, svg {
+  max-width: 100%;
+}
+
+.exp-desc,
+.project-desc,
+.subrepo-item,
+.hero-desc,
+.contact-desc,
+.pub-desc {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Container */
@@ -295,6 +317,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  max-width: 100%;
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.25);
   padding: 6px 16px;
@@ -583,6 +606,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 12px;
 }
 
@@ -789,6 +814,29 @@ a {
   font-weight: 600;
 }
 
+.pub-card-wide {
+  grid-column: span 2;
+}
+
+/* GitHub Stats Container */
+.github-stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.github-stats-container img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  min-width: 0;
+}
+
 /* Contact Section */
 .contact-container {
   background: linear-gradient(135deg, rgba(20, 28, 48, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
@@ -900,6 +948,9 @@ a {
   .pubs-grid {
     grid-template-columns: 1fr;
   }
+  .pub-card-wide {
+    grid-column: span 1;
+  }
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -940,5 +991,134 @@ a {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+  .section {
+    padding: 55px 0;
+  }
+  .section-header {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+  .hero-section {
+    padding: 60px 0 40px 0;
+  }
+  .hero-status-pill {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    gap: 8px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-roles {
+    font-size: 1.1rem;
+  }
+  .hero-education {
+    font-size: 0.88rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .project-card {
+    padding: 22px 18px;
+  }
+  .project-title {
+    font-size: 1.25rem;
+  }
+  .experience-card {
+    padding: 22px 18px;
+  }
+  .pub-card {
+    padding: 18px 14px;
+    gap: 12px;
+  }
+  .pub-icon-wrap {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+  }
+  .timeline {
+    padding-left: 24px;
+  }
+  .timeline::before {
+    left: 4px;
+  }
+  .timeline-dot {
+    left: -24px;
+    width: 12px;
+    height: 12px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-container {
+    padding: 36px 16px;
+  }
+  .contact-title {
+    font-size: 1.85rem;
+  }
+  .contact-desc {
+    font-size: 0.98rem;
+  }
+  .contact-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .contact-actions .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 10px 14px;
+    text-align: center;
+    word-break: break-word;
+  }
+  .copy-toast {
+    right: 16px;
+    left: 16px;
+    bottom: 20px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-education {
+    font-size: 0.82rem;
+  }
+  .social-link {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+  }
+  .project-card {
+    padding: 18px 14px;
+  }
+  .experience-card {
+    padding: 18px 14px;
+  }
+  .metric-number {
+    font-size: 1.75rem;
   }
 }
